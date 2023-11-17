@@ -1,0 +1,1009 @@
+@import "_null";
+@import "_color";
+/*<HEADER>*************************************************************************************************************************************************/
+@import "_header";
+/*</HEADER>*************************************************************************************************************************************************/
+/*<BODY>*************************************************************************************************************************************************/
+
+@import "_body";
+
+/*</BODY>*************************************************************************************************************************************************/
+
+/*<WRAPPER>********************************************************************************************************************************************/
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+/*</WRAPPER>********************************************************************************************************************************************/
+/*<ОСНОВНАЯ ОБЁРТКА>*************************************************************************************************************************************/
+._container {
+	max-width: 1046px;
+	margin: 0 auto;
+	//Делаю отступы и исключаю их из размера контейнера
+	padding: 0px 15px;
+	box-sizing: content-box;
+}
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+/*</ОСНОВНАЯ ОБЁРТКА>*************************************************************************************************************************************/
+/**<ОСНОВНОЙ КОНТЕНТ>**************************************************************************************************************************************************/
+.page {
+	flex: 1 1 auto;
+}
+.page {
+	&__main-block {
+	}
+}
+.main-block {
+	position: relative;
+	&__container {
+	}
+
+	&__body {
+		padding: 184px 0px 191px 0px;
+		position: relative;
+		z-index: 2;
+		max-width: 400px;
+		> * {
+			&:not(:last-child) {
+				margin: 0px 0px 35px 0px;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 58px;
+		font-weight: 800;
+		line-height: calc((80 / 58) * 100%);
+		letter-spacing: 0.2px;
+	}
+
+	&__text {
+		color: #737373;
+		font-size: 20px;
+		line-height: ((30 / 20) * 100%);
+	}
+
+	&__buttons {
+		display: inline-flex;
+		flex-wrap: wrap;
+		margin: -10px 0px;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		position: relative;
+		letter-spacing: 0.2px;
+		border-radius: 37px;
+		min-height: 48px;
+		top: 0px;
+		left: 0px;
+		padding: 5px 36px;
+		margin: 10px 0;
+		@include fontz(14px, 700, $COLOR_WHITE);
+		line-height: calc((24 / 14) * 100%);
+		&_orange {
+			background-color: #ff7b47;
+		}
+		&_border {
+			color: #0d5c63;
+			border: 1px solid #0d5c63;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 80px;
+		left: 0;
+	}
+}
+/*...Display-adapt......................................................................................................................................*/
+@media (max-width: 1300px) {
+	.main-block {
+		&__image {
+			img {
+				object-position: right;
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.main-block {
+		&__body {
+			padding: 120px 0px 191px 0px;
+		}
+		&__image {
+			img {
+				opacity: 0.5;
+			}
+		}
+		&__text {
+			color: #3f3e3e;
+		}
+	}
+}
+@media (max-width: 479px) {
+	.main-block {
+		&__body {
+			padding: 115px 0px 160px 0px;
+		}
+		&__title {
+			font-size: 42px;
+		}
+		&__text {
+		}
+		&__button {
+			flex: 1 1 100%;
+		}
+	}
+}
+@media (min-width: 479px) {
+	.main-block {
+		&__button {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+
+/***<Content-2>****************************************************************************************************************/
+
+.page {
+	&__services {
+		position: relative;
+		z-index: 2;
+		margin: -111px 0px 0px 0px;
+	}
+}
+.services {
+	&__container {
+	}
+
+	&__body {
+	}
+
+	&__column {
+		flex: 0 1 33.333%;
+	}
+
+	&__item {
+		box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+		background-color: #fff;
+		padding: 35px;
+		height: 100%;
+	}
+}
+.item-service {
+	> * {
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+	&__icon {
+	}
+
+	&__title {
+		@include fontz(24px, 700, #252b42);
+		line-height: calc((32 / 24) * 100%);
+		letter-spacing: 0.1px;
+	}
+
+	&__text {
+		@include fontz(14px, 500, #737373);
+		line-height: calc((20 / 14) * 100%);
+	}
+	&:hover {
+		background-color: #0d5c63;
+		h3,
+		div {
+			color: #fff;
+		}
+		svg {
+			path {
+				fill: #fff;
+			}
+		}
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+@media (max-width: 992px) {
+	.services {
+		&__column {
+			flex: 0 1 50%;
+			&:not(:last-child) {
+				margin: 0px 0px 30px 0px;
+			}
+			&:nth-child(n + 3) {
+				flex: 1 1 50%;
+			}
+		}
+	}
+}
+
+@media (max-width: 670px) {
+	.services {
+		&__column {
+		}
+	}
+}
+
+@media (min-width: 670px) {
+	.services {
+		&__body {
+			display: flex;
+			margin: 0px -15px;
+			flex-wrap: wrap;
+		}
+		&__column {
+			padding: 0px 15px;
+		}
+	}
+}
+
+@media (max-width: 479px) {
+	.services {
+		&__item {
+			padding: 35px;
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-2>****************************************************************************************************************/
+
+/***<Content-3>****************************************************************************************************************/
+
+.page {
+	&__advantages {
+	}
+}
+.advantages {
+	padding: 80px 0;
+	&__container {
+	}
+
+	&__header {
+		margin: 0px 0px 50px 0px;
+	}
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+	}
+
+	&__column {
+		padding: 0px 15px;
+		flex: 0 1 25%;
+		text-align: center;
+		height: 100%;
+		margin: 0px 0px 30px 0px;
+	}
+
+	&__item {
+		background-color: #fff;
+		padding: 30px 40px;
+		> * {
+			&:not(:last-child) {
+				margin: 0px 0px 10px 0px;
+			}
+		}
+	}
+
+	&__icon {
+		height: 48px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	&__value {
+		@include fontz(40px, 700, #252b42);
+		line-height: calc((57 / 40) * 100%);
+	}
+
+	&__text {
+		@include fontz(16px, 500, #737373);
+		line-height: calc((20 / 16) * 100%);
+	}
+}
+
+/*****************!!!!!!!!!!!!!!!!!!!!!!!!!!!!************************/
+.header-block {
+	text-align: center;
+	letter-spacing: 0.2px;
+	&__title {
+		@include fontz(40px, 700, #252b42);
+		line-height: calc((57 / 40) * 100%);
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__sub-title {
+		@include fontz(14px, 500, #737373);
+		line-height: calc((20 / 14) * 100%);
+	}
+}
+@media (max-width: 767px) {
+	.header-block {
+		&__title {
+			font-size: 35px;
+		}
+	}
+}
+@media (max-width: 560px) {
+	.header-block {
+		&__title {
+			font-size: 30px;
+		}
+	}
+}
+/***********************!!!!!!!!!!!!!!!!!!!!!!!!!!!****************************/
+
+/*...Display-adapt......................................................................................................................................*/
+
+@media (max-width: 1100px) {
+	.advantages {
+		&__column {
+			flex: 0 1 50%;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.advantages {
+		padding: 50px 0px;
+	}
+}
+@media (max-width: 767px) {
+	.advantages {
+		padding: 80px 0px;
+		&__header {
+			margin: 0px 0px 25px 0px;
+		}
+	}
+}
+@media (max-width: 560px) {
+	.advantages {
+		&__column {
+			flex: 0 1 100%;
+		}
+	}
+}
+
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-3>****************************************************************************************************************/
+
+/***<Content-4>****************************************************************************************************************/
+
+.page {
+	&__practice {
+	}
+}
+.practice {
+	padding: 125px 0px 80px 0px;
+	&__container {
+	}
+
+	&__header {
+		margin: 0px 0px 45px 0px;
+	}
+
+	&__body {
+		margin: 0px -20px -30px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__column {
+		flex: 0 1 25%;
+		padding: 0px 20px;
+		margin: 0 0 30px 0px;
+	}
+
+	&__item {
+	}
+}
+
+.item-practice {
+	background-color: #fff;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	&__content {
+		margin: 30px;
+		flex: 1 1 auto;
+		> * {
+			&:not(:last-child) {
+				margin: 0px 0px 15px 0px;
+			}
+		}
+	}
+	&__link {
+		display: inline-block;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__title {
+		@include fontz(16px, 700, #252b42);
+		letter-spacing: 0.1px;
+		line-height: 150%;
+	}
+
+	&__text {
+		@include fontz(14px, 500, #737373);
+		letter-spacing: 0.2px;
+		line-height: 143%;
+	}
+	&__image {
+		display: block;
+		padding: 0px 0px 60% 0px;
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+
+@media (max-width: 1080px) {
+	.practice {
+		&__column {
+			flex: 0 1 50%;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.practice {
+		&__column {
+			padding: 0px 35px;
+		}
+	}
+}
+@media (max-width: 670px) {
+	.practice {
+		&__column {
+			flex: 0 1 100%;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.practice {
+		padding: 40px 0px 70px 0px;
+	}
+}
+@media (max-width: 767px) {
+	.practice {
+		padding: 0px 0px 40px 0px;
+		&__header {
+			margin: 0px 0px 25px 0px;
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-4>****************************************************************************************************************/
+
+/***<Content-5>****************************************************************************************************************/
+
+.page {
+	&__whoweare {
+	}
+}
+.whoweare {
+	padding: 80px 0px 130px 0px;
+	background-color: #fff;
+	&__container {
+	}
+
+	&__header {
+		margin: 0px 0px 100px 0px;
+	}
+
+	&__body {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	&__video {
+		position: relative;
+		flex: 0 0 57%;
+		padding: 0px 0px 42.25% 0px;
+		iframe {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		flex: 1 1 auto;
+		padding: 0px 0px 0px 121px;
+	}
+	&__header {
+		&:not(:last-child) {
+			margin: 0px 0px 50px 0px;
+		}
+	}
+	&__title {
+		@include fontz(40px, 700, #252b42);
+		line-height: 143%;
+		letter-spacing: 0.2px;
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__text {
+		@include fontz(14px, 500, #737373);
+		line-height: 143%;
+	}
+
+	&__items {
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+}
+.item-whoweare {
+	display: flex;
+	&__icon {
+		flex: 0 0 32px;
+	}
+
+	&__body {
+		flex: 1 1 auto;
+		padding: 0px 0px 0px 20px;
+	}
+	&__title {
+		@include fontz(16px, 700, #252b42);
+		line-height: 150%;
+		letter-spacing: 0.2px;
+		&:not(:last-child) {
+			margin: 0px 0px 5px 0px;
+		}
+	}
+	&__text {
+		@include fontz(16px, 600, #737373);
+		line-height: 171%;
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+
+@media (max-width: 1080px) {
+	.whoweare {
+		padding: 50px 0px 80px 0px;
+		&__content {
+			padding: 0px 0px 0px 80px;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.whoweare {
+		padding: 20px 0px 50px 0px;
+		&__content {
+			padding: 0px;
+		}
+		&__body {
+			flex-wrap: wrap;
+			flex-direction: column-reverse;
+			align-items: stretch;
+			padding: 0px;
+		}
+		&__video {
+			flex: 0 0 100%;
+			padding: 0px 0px 56.25% 0px;
+			&:not(:last-child) {
+				margin: 45px 0px 0px 0px;
+			}
+		}
+		&__header {
+			margin: 0px 0px 30px 0px;
+		}
+		&__title {
+			font-size: 24px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.whoweare {
+		padding: 0px;
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-5>****************************************************************************************************************/
+
+/***<Content-6>****************************************************************************************************************/
+.page {
+	&__clients {
+	}
+}
+.clients {
+	padding: 50px 0px;
+	&:not(:last-child) {
+		margin: 0px 0px 10px 0px;
+	}
+	&__container {
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__item {
+		text-align: center;
+		padding: 8px 15px;
+		flex: 0 1 16.667%;
+		min-width: 140px;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+@media (max-width: 890px) {
+	.clients {
+		padding: 20px 0px;
+		&__item {
+			text-align: center;
+			padding: 15px 15px;
+			flex: 0 1 33.333%;
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-6>****************************************************************************************************************/
+/***<Content-7>****************************************************************************************************************/
+.page {
+	&__subscribe {
+	}
+}
+.subscribe {
+	position: relative;
+	padding: 0px 0px 20px 0px;
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background-color: #252b42;
+		height: 77px;
+		z-index: 1;
+	}
+	&__container {
+	}
+
+	&__body {
+		flex-wrap: wrap;
+		align-items: center;
+		background-color: #17213c;
+		border-radius: 2px;
+		padding: 30px 50px;
+		position: relative;
+		z-index: 10;
+	}
+
+	&__title {
+		@include fontz(24px, 700, #fff);
+		line-height: 133%;
+		letter-spacing: 0.1px;
+	}
+
+	&__form {
+		flex: 0 1 50%;
+		display: flex;
+		align-items: center;
+	}
+
+	&__input {
+		flex: 1 1 auto;
+		border: 1px solid #e6e6e6;
+		width: 100%;
+		min-height: 58px;
+		padding: 0px 20px;
+		border-radius: 5px 0 0 5px;
+		background-color: #f9f9f9;
+		@include fontz(20px, 400, #000);
+		&:focus {
+			box-shadow: 1px 0px 8px #000;
+		}
+	}
+
+	&__button {
+		background: #ff7b47;
+		border: 1px solid #e6e6e6;
+		border-radius: 0px 5px 5px 0px;
+		display: flex;
+		min-height: 58px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: #fff;
+		padding: 0px 22px;
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+@media (min-width: 1070px) {
+	.subscribe {
+		&__body {
+			margin: 0px 30px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.subscribe {
+		&__title {
+			max-width: 266px;
+		}
+		&__body {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.subscribe {
+		&__body {
+			margin: 0px -15px;
+		}
+		&__title {
+			flex: 0 1 100%;
+			margin: 0px 0px 25px 0px;
+		}
+
+		&__form {
+			flex: 1 1 100%;
+		}
+	}
+}
+@media (max-width: 630px) {
+	.subscribe {
+		&__input {
+			padding: 0px 15px;
+		}
+
+		&__button {
+			padding: 0px 15px;
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-7>****************************************************************************************************************/
+/***<Content-8>****************************************************************************************************************/
+.page {
+	&__getintouch {
+	}
+}
+.getintouch {
+	padding: 80px 0px 136px 0px;
+	&__container {
+	}
+
+	&__header {
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		padding: 80px 0px 0px 0px;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		flex: 0 1 33.333%;
+	}
+}
+.item-getintouch {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 15px;
+	background-color: #fff;
+	&:hover {
+		background-color: #252b42;
+		color: #fff;
+		div > * {
+			color: #fff;
+		}
+		p {
+			color: #fff;
+		}
+		svg {
+			path {
+				fill: #fff;
+			}
+		}
+	}
+	> * {
+		&:not(:last-child) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	&__icon {
+	}
+
+	&__emails {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__email {
+		@include fontz(14px, 600, #252b42);
+		line-height: 171%;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__lable {
+		@include fontz(16px, 700, #252b42);
+		line-height: 150%;
+	}
+
+	&__button {
+		border: 1px solid #ff7b47;
+		border-radius: 5px;
+		display: inline-block;
+		min-height: 44px;
+		line-height: 171%;
+		align-items: center;
+		text-align: center;
+		letter-spacing: 1px;
+		padding: 10px 20px;
+		@include fontz(14px, 600, #ff7b47);
+		transition: all 0.3s ease 0s;
+		&:hover {
+			border-color: #fff;
+			background-color: #ff7b47;
+			color: #fff;
+		}
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+@media (max-width: 992px) {
+	.getintouch {
+		padding: 40px 0px 50px 0px;
+		&__items {
+			margin: 0px -15px;
+		}
+		&__item {
+			flex: 0 1 50%;
+			&:nth-child(n + 3) {
+				flex: 1 1 50%;
+			}
+		}
+	}
+}
+@media (max-width: 640px) {
+	.getintouch {
+		padding: 15px 0px 20px 0px;
+		&__item {
+			flex: 0 1 100%;
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-8>****************************************************************************************************************/
+/***<Content-9>****************************************************************************************************************/
+.page {
+	&__contact {
+	}
+}
+.contact {
+	padding: 42px 0px;
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__content {
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__title {
+		@include fontz(24px, 700, #252b42);
+		line-height: 133%;
+		letter-spacing: 0.1px;
+	}
+
+	&__text {
+		@include fontz(14px, 500, #252b42);
+		line-height: 142%;
+		letter-spacing: 0.2px;
+	}
+
+	&__button {
+		background-color: #ff7b47;
+		border-radius: 5px;
+		display: inline-block;
+		min-height: 44px;
+		line-height: 171%;
+		align-items: center;
+		text-align: center;
+		letter-spacing: 1px;
+		padding: 10px 20px;
+		@include fontz(14px, 600, #fff);
+		transition: all 0.3s ease 0s;
+	}
+}
+
+/*...Display-adapt......................................................................................................................................*/
+@media (max-width: 992px) {
+	.contact {
+		padding: 20px 0px;
+	}
+}
+@media (max-width: 767px) {
+	.contact {
+		&__content {
+			flex: 0 1 100%;
+			&:not(:last-child) {
+				margin: 0px 0px 15px 0px;
+			}
+		}
+		&__button{
+			flex: 0 1 100%;
+		}
+	}
+}
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-9>****************************************************************************************************************/
+
+/***<Content-10>****************************************************************************************************************/
+
+/*...Display-adapt......................................................................................................................................*/
+
+/*....</Display-adapt>.....................................................................................................................................*/
+/***</Content-10>****************************************************************************************************************/
+
+/*</ОСНОВНОЙ КОНТЕНТ>***************************************************************************************************************************************************/
+
+/*<ID>**************************************************************************************************************************************************/
+
+/*</ID>**************************************************************************************************************************************************/
+
+/**<FOOTER>********************************************************************************************************************************************/
+
+@import "_footer";
+
+/**</FOOTER>********************************************************************************************************************************************/
